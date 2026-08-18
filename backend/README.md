@@ -1,4 +1,4 @@
-# Uptime Monitor
+# Alive
 
 A lightweight, concurrent asynchronous uptime monitoring service built with FastAPI and HTTPX.
 
@@ -31,7 +31,7 @@ backend/
 
 ### 1. Install Dependencies
 ```bash
-pip install -r requirements.txt  # or install via uv / pip install -e .
+uv sync
 ```
 
 ### 2. Start the Server

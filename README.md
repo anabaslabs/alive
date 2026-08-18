@@ -1,3 +1,3 @@
-# alive
+# Alive
 
-Monitor and Uptime Checker
+A lightweight, concurrent asynchronous uptime monitoring service built with FastAPI and HTTPX.
