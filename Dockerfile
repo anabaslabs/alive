@@ -23,6 +23,7 @@ ENV HOME=/home/user \
   PATH=/home/user/.local/bin:$PATH
 
 COPY --chown=user app app
+COPY --chown=user data data
 
 EXPOSE ${PORT}
 

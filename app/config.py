@@ -17,7 +17,7 @@ HEADERS = {
     "Accept": "*/*",
 }
 
-DB_DIR = Path(__file__).parent.parent.parent / "database"
+DB_DIR = Path(__file__).resolve().parent.parent / "data"
 MONITORS_FILE = DB_DIR / "monitors.json"
 TEMPLATE_FILE = DB_DIR / "template.json"
 
