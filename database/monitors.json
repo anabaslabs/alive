@@ -34,5 +34,9 @@
   "Sizelib_FE": {
     "url": "https://sizelib.hirishi.in",
     "interval": 3600
+  },
+  "NoBG_Worker": {
+    "url": "https://itskdhere-nobg-worker.hf.space",
+    "interval": 3600
   }
 }

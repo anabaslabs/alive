@@ -7,7 +7,8 @@ name = "alive-backend"
 version = "1.0.0"
 description = "Asynchronous Uptime Monitoring Service"
 authors = [
-    {name = "Saptarshi Roy"}
+    {name = "Saptarshi Roy"},
+    {name = "Krishnendu Das"}
 ]
 license = "MIT"
 readme = "README.md"
