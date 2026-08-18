@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alive-backend"
+version = "1.0.0"
+description = "Asynchronous Uptime Monitoring Service"
+authors = [
+    {name = "Saptarshi Roy"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.3",
+    "uvicorn[standard]>=0.34.0",
+    "pydantic>=2.10.5",
+    "python-dotenv>=1.2.2",
+    "python-multipart>=0.0.20",
+    "httpx>=0.28.1",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "RUF"]
+ignore = ["E501", "N803", "N806", "RUF059"]
+
+[tool.setuptools]
+packages = ["app"]
