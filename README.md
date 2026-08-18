@@ -1,4 +1,4 @@
-﻿<h1 align="center">
+<h1 align="center">
   <b>🔰</b>
     <br>
   <b>ALIVE</b>
@@ -74,13 +74,19 @@ alive/
 
 ## ✳️ _Getting Started_
 
-### 1. Install Dependencies
+### 1. Configure Environment
+
+```bash
+cp .env.example .env
+```
+
+### 2. Install Dependencies
 
 ```bash
 uv sync
 ```
 
-### 2. Start the Server
+### 3. Start the Server
 
 ```bash
 uv run python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
