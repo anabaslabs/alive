@@ -1,0 +1,38 @@
+{
+  "Arkiv_BE": {
+    "url": "https://saptarshiroy39-arkiv.hf.space",
+    "interval": 3600
+  },
+  "Arkiv_FE": {
+    "url": "https://arkiv.hirishi.in",
+    "interval": 3600
+  },
+  "Cipher_BE": {
+    "url": "https://saptarshiroy39-cipher.hf.space",
+    "interval": 3600
+  },
+  "Cipher_FE": {
+    "url": "https://cipher.hirishi.in",
+    "interval": 3600
+  },
+  "n8n_S": {
+    "url": "https://n8n.hirishi.in",
+    "interval": 3600
+  },
+  "Portfolio_FE": {
+    "url": "https://hirishi.in",
+    "interval": 3600
+  },
+  "Ranno_BE": {
+    "url": "https://saptarshiroy39-ranno.hf.space",
+    "interval": 3600
+  },
+  "Ranno_FE": {
+    "url": "https://ranno.hirishi.in",
+    "interval": 3600
+  },
+  "Sizelib_FE": {
+    "url": "https://sizelib.hirishi.in",
+    "interval": 3600
+  }
+}

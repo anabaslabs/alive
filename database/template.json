@@ -1,0 +1,22 @@
+{
+  "Name_1": {
+    "url": "url_1",
+    "interval": 1
+  },
+  "Name_2": {
+    "url": "url_2",
+    "interval": 2
+  },
+  "Name_3": {
+    "url": "url_3",
+    "interval": 3
+  },
+  "Name_4": {
+    "url": "url_4",
+    "interval": 4
+  },
+  "Name_5": {
+    "url": "url_5",
+    "interval": 5
+  }
+}
