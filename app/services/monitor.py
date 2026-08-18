@@ -1,7 +1,8 @@
 ﻿import asyncio
+import json
 import time
 import httpx
-from app.config import HEADERS, MONITORS
+from app.config import HEADERS, MONITORS_FILE
 
 STATUS: dict[str, dict] = {}
 
@@ -20,6 +21,7 @@ async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient)
 
 
 def status() -> dict:
+    monitors = json.loads(MONITORS_FILE.read_text(encoding="utf-8")) if MONITORS_FILE.exists() else {}
     return {
         name: {
             "url": data["url"],
@@ -27,5 +29,5 @@ def status() -> dict:
             "status": STATUS.get(name, {}).get("code", "PENDING"),
             "last_checked": STATUS.get(name, {}).get("time", "-"),
         }
-        for name, data in MONITORS.items()
+        for name, data in monitors.items()
     }

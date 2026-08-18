@@ -40,7 +40,7 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/", tags=["Health"])
 async def root():
     return {
         "name": APP_NAME,

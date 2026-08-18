@@ -5,7 +5,7 @@ from app.services.download import download
 router = APIRouter()
 
 
-@router.get("/download", tags=["Database"])
+@router.get("/download", tags=["Data"])
 async def download_route():
     return FileResponse(
         path=download(),
