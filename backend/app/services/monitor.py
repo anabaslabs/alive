@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import time
 import httpx
 from app.config import HEADERS, MONITORS
@@ -10,10 +10,12 @@ async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient)
     while True:
         timestamp = time.strftime("%H:%M:%S")
         try:
-            code = (await client.get(url, headers=HEADERS, timeout=10)).status_code
+            res = await client.get(url, headers=HEADERS, timeout=10)
+            code, reason = res.status_code, res.reason_phrase
         except Exception as e:
-            code = f"FAIL ({e})"
+            code, reason = f"FAIL ({e})", ""
         STATUS[name] = {"code": code, "time": timestamp}
+        print(f"[{timestamp}] {name}: {code} {reason}".strip())
         await asyncio.sleep(interval)
 
 
