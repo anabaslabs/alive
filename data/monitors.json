@@ -39,5 +39,8 @@
     "url": "https://itskdhere-nobg-worker.hf.space",
     "interval": 14400
   },
+  "Alive": {
+    "url": "https://alive.anabaslabs.com",
+    "interval": 600
   }
 }
