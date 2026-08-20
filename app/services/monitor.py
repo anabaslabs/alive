@@ -1,11 +1,10 @@
-﻿import asyncio
+import asyncio
 import json
 import time
 import httpx
 from app.config import HEADERS, MONITORS_FILE
 
 STATUS: dict[str, dict] = {}
-
 
 async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient):
     while True:
@@ -14,9 +13,11 @@ async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient)
             res = await client.get(url, headers=HEADERS, timeout=10)
             code, reason = res.status_code, res.reason_phrase
         except Exception as e:
-            code, reason = f"FAIL ({e})", ""
+            err = str(e).strip() or type(e).__name__
+            code, reason = f"FAIL ({err})", ""
         STATUS[name] = {"code": code, "time": timestamp}
-        print(f"[{timestamp}] {name}: {code} {reason}".strip())
+        status_text = f"{code} {reason}".strip()
+        print(f"{timestamp} | {name:<14} | {url:<40} | {status_text}")
         await asyncio.sleep(interval)
 
 
