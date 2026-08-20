@@ -1,4 +1,8 @@
 {
+  "Alive": {
+    "url": "https://alive.anabaslabs.com",
+    "interval": 600
+  },
   "Portfolio_FE": {
     "url": "https://hirishi.in",
     "interval": 14400
@@ -8,7 +12,7 @@
     "interval": 14400
   },
   "Arkiv_FE": {
-    "url": "https://arkiv.hirishi.in",
+    "url": "https://arkiv.hirishi.in/chat",
     "interval": 14400
   },
   "Cipher_BE": {
@@ -24,11 +28,11 @@
     "interval": 14400
   },
   "Ranno_FE": {
-    "url": "https://ranno.hirishi.in",
+    "url": "https://ranno.hirishi.in/introduction",
     "interval": 14400
   },
   "Sizelib_FE": {
-    "url": "https://sizelib.hirishi.in",
+    "url": "https://sizelib.hirishi.in/introduction",
     "interval": 14400
   },
   "n8n_S": {
@@ -38,9 +42,5 @@
   "NoBG_Worker": {
     "url": "https://itskdhere-nobg-worker.hf.space",
     "interval": 14400
-  },
-  "Alive": {
-    "url": "https://alive.anabaslabs.com",
-    "interval": 600
   }
 }
