@@ -46,6 +46,7 @@ async def root():
         "name": APP_NAME,
         "version": APP_VERSION,
         "status": "OK",
+        "swagger-ui": "https://alive.anabaslabs.com/docs"
     }
 
 

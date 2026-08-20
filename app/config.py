@@ -1,4 +1,4 @@
-﻿import json
+import json
 import os
 from pathlib import Path
 
@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 APP_NAME = "Alive API"
-APP_VERSION = "1.0.0"
+APP_VERSION = "1.5.0"
 
 TOKEN = os.getenv("TOKEN")
 

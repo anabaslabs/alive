@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/anabaslabs/alive">
-    <img alt="Version" src="https://img.shields.io/badge/version-v1.0.0-emerald">
+    <img alt="Version" src="https://img.shields.io/badge/version-v1.5.0-emerald">
   </a>
   <a href="https://github.com/anabaslabs/alive/blob/main/LICENSE">
     <img alt="GitHub License" src="https://img.shields.io/github/license/anabaslabs/alive?color=crimson">
