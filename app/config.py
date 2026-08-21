@@ -10,6 +10,7 @@ APP_NAME = "Alive API"
 APP_VERSION = "1.5.0"
 
 TOKEN = os.getenv("TOKEN")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 CORS_ORIGINS_STR = os.getenv("CORS_ORIGINS", '["*"]')
 CORS_ORIGINS = json.loads(CORS_ORIGINS_STR)
