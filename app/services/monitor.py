@@ -6,11 +6,13 @@ from app.config import HEADERS, MONITORS_FILE
 
 STATUS: dict[str, dict] = {}
 
-async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient):
+async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient, delay: float = 0):
+    if delay > 0:
+        await asyncio.sleep(delay)
     while True:
         timestamp = time.strftime("%H:%M:%S")
         try:
-            res = await client.get(url, headers=HEADERS, timeout=10)
+            res = await client.get(url, headers=HEADERS, timeout=60)
             code, reason = res.status_code, res.reason_phrase
         except Exception as e:
             err = str(e).strip() or type(e).__name__
