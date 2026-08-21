@@ -10,7 +10,8 @@ APP_NAME = "Alive API"
 APP_VERSION = "1.5.0"
 
 TOKEN = os.getenv("TOKEN")
-HF_TOKEN = os.getenv("HF_TOKEN")
+KD_HF_TOKEN = os.getenv("KD_HF_TOKEN")
+SR_HF_TOKEN = os.getenv("SR_HF_TOKEN")
 
 CORS_ORIGINS_STR = os.getenv("CORS_ORIGINS", '["*"]')
 CORS_ORIGINS = json.loads(CORS_ORIGINS_STR)
@@ -21,8 +22,6 @@ HEADERS = {
 }
 
 TIMEOUT = 60
-MAX_RETRIES = 10
-RETRY_DELAY = 10
 
 DB_DIR = Path(__file__).resolve().parent.parent / "data"
 MONITORS_FILE = DB_DIR / "monitors.json"
