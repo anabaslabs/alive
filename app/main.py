@@ -18,8 +18,8 @@ from app.services.monitor import monitor
 async def lifespan(app: FastAPI):
     async with httpx.AsyncClient() as client:
         tasks = [
-            asyncio.create_task(monitor(name, data["url"], data["interval"], client, delay=i * 2))
-            for i, (name, data) in enumerate(MONITORS.items())
+            asyncio.create_task(monitor(name, data["url"], data["interval"], client))
+            for name, data in MONITORS.items()
         ]
         yield
         for t in tasks:

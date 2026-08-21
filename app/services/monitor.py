@@ -2,24 +2,32 @@ import asyncio
 import json
 import time
 import httpx
-from app.config import HEADERS, MONITORS_FILE
+from app.config import HEADERS, MAX_RETRIES, MONITORS_FILE, RETRY_DELAY, TIMEOUT
 
 STATUS: dict[str, dict] = {}
 
-async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient, delay: float = 0):
-    if delay > 0:
-        await asyncio.sleep(delay)
+
+async def monitor(name: str, url: str, interval: int, client: httpx.AsyncClient):
     while True:
-        timestamp = time.strftime("%H:%M:%S")
-        try:
-            res = await client.get(url, headers=HEADERS, timeout=60)
-            code, reason = res.status_code, res.reason_phrase
-        except Exception as e:
-            err = str(e).strip() or type(e).__name__
-            code, reason = f"FAIL ({err})", ""
-        STATUS[name] = {"code": code, "time": timestamp}
-        status_text = f"{code} {reason}".strip()
-        print(f"{timestamp} | {name:<14} | {url:<40} | {status_text}")
+        for attempt in range(1, MAX_RETRIES + 1):
+            timestamp = time.strftime("%H:%M:%S")
+            try:
+                res = await client.get(url, headers=HEADERS, timeout=TIMEOUT)
+                code, reason = res.status_code, res.reason_phrase
+            except Exception as e:
+                err = str(e).strip() or type(e).__name__
+                code, reason = f"FAIL ({err})", ""
+
+            STATUS[name] = {"code": code, "time": timestamp}
+            status_text = f"{code} {reason}".strip()
+            print(f"{timestamp} | {name:<14} | {url:<40} | {status_text}")
+
+            if isinstance(code, int) and code < 500:
+                break
+
+            if attempt < MAX_RETRIES:
+                await asyncio.sleep(RETRY_DELAY)
+
         await asyncio.sleep(interval)
 
 

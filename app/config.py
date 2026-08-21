@@ -19,6 +19,10 @@ HEADERS = {
     "Accept": "*/*",
 }
 
+TIMEOUT = 60
+MAX_RETRIES = 10
+RETRY_DELAY = 10
+
 DB_DIR = Path(__file__).resolve().parent.parent / "data"
 MONITORS_FILE = DB_DIR / "monitors.json"
 TEMPLATE_FILE = DB_DIR / "template.json"
